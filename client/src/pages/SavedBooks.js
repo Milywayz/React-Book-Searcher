@@ -3,11 +3,9 @@ import { Container, Card, Button, Row, Col } from "react-bootstrap";
 import { useMutation, useQuery } from "@apollo/client";
 import { GET_USER } from "../utils/queries";
 import { DELETE_BOOK } from "../utils/mutations";
-
-import { getMe, deleteBook } from "../utils/API";
-import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
 
+// Saved Book Component
 const SavedBooks = () => {
   const { loading, data } = useQuery(GET_USER);
   const user = data?.me || [];
